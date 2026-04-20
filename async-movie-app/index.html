@@ -2,11 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="" href="" />
+    <link rel="icon" type="image/x-icon" href="./src/assets/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Async movie app</title>
   </head>
   <body>
+    <header class="header" id="header">
+      <nav class="header__nav">
+        <a class="header__nav--logo" href="#header"
+          ><img
+            class="header__nav--logo-img"
+            src="./src/assets/logo.svg"
+            alt="Movie app logo"
+        /></a>
+        <ul class="header__nav--list">
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">TV Shows</a></li>
+          <li><a href="#">My Fav</a></li>
+        </ul>
+      </nav>
+      <section class="header__search">
+        <form method="get" class="header__search--form">
+          <label class="header__search--form-label" for="search-input"
+            >Enter name of movie, tv show...</label
+          >
+          <input
+            class="header__search--form-input"
+            type="text"
+            name="search-input"
+            id="search-input"
+          />
+          <button class="header__search--form-submit-btn" type="submit">
+            <img src="./src/assets/search-btn-img.svg" alt="Search image" />
+          </button>
+        </form>
+      </section>
+    </header>
+    <main class="main"></main>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
