@@ -9,31 +9,41 @@
   <body>
     <header class="header" id="header">
       <nav class="header__nav">
-        <a class="header__nav--logo" href="#header"
+        <a class="header__logo" href="#header"
           ><img
-            class="header__nav--logo-img"
+            class="header__logo-img"
             src="./src/assets/logo.svg"
             alt="Movie app logo"
         /></a>
-        <ul class="header__nav--list">
-          <li><a href="#">Movies</a></li>
-          <li><a href="#">TV Shows</a></li>
-          <li><a href="#">My Fav</a></li>
+        <ul class="header__list">
+          <li class="header__list-item"><a href="#">Movies</a></li>
+          <li class="header__list-item"><a href="#">TV Shows</a></li>
+          <li class="header__list-item"><a href="#">My Fav</a></li>
         </ul>
+        <button class="header__burger">
+          <span class="burger-span"></span>
+          <span class="burger-span"></span>
+          <span class="burger-span"></span>
+        </button>
       </nav>
-      <section class="header__search">
-        <form method="get" class="header__search--form">
-          <label class="header__search--form-label" for="search-input"
-            >Enter name of movie, tv show...</label
-          >
+      <section class="header__search search">
+        <form method="get" class="search__form">
+          <label class="search-label visually-hidden" for="search-input"
+            >Enter movie name...</label
+          ><br />
           <input
-            class="header__search--form-input"
-            type="text"
+            class="search-input"
+            type="search"
             name="search-input"
             id="search-input"
+            required
           />
-          <button class="header__search--form-submit-btn" type="submit">
-            <img src="./src/assets/search-btn-img.svg" alt="Search image" />
+          <button class="search-submit-btn" type="submit" aria-label="Search">
+            <img
+              src="./src/assets/search-btn-img.svg"
+              alt="Search image"
+              aria-hidden="true"
+            />
           </button>
         </form>
       </section>
