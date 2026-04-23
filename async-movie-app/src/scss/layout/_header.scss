@@ -1,6 +1,9 @@
+@use "../utils/index" as breakpoint;
+
 .header {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 
   &__nav {
     display: flex;
@@ -16,6 +19,16 @@
   }
   &__list {
     display: none;
+
+    @include breakpoint.mediaQuery("medium") {
+      display: flex;
+    }
+    &-item {
+      text-transform: uppercase;
+      &:not(:last-of-type) {
+        margin-right: 1rem;
+      }
+    }
   }
   &__burger {
     width: 25px;
@@ -25,6 +38,10 @@
     flex-direction: column;
     justify-content: space-between;
 
+    @include breakpoint.mediaQuery("medium") {
+      display: none;
+    }
+
     .burger-span {
       display: block;
       width: 100%;
@@ -32,8 +49,11 @@
       background-color: black;
     }
   }
-
   .search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
     &__form {
       display: flex;
       flex-direction: row;
@@ -44,6 +64,25 @@
       display: block;
       width: 30px;
       height: 30px;
+    }
+  }
+  &__filter-container {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(50, 50, 50, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .filter-box {
+      width: 500px;
+      height: auto;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 1rem;
     }
   }
 }
