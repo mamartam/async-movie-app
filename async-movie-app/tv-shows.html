@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./src/assets/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV-shows</title>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="header__nav">
+        <a class="header__logo" href="index.html"
+          ><img
+            class="header__logo-img"
+            src="./src/assets/logo.svg"
+            alt="Movie app logo"
+        /></a>
+        <ul class="header__list">
+          <li class="header__list-item">
+            <a href="movies.html" target="_blank">Movies</a>
+          </li>
+          <li class="header__list-item">
+            <a href="tv-shows.html" target="_blank">TV Shows</a>
+          </li>
+          <li class="header__list-item">
+            <a href="actors.html" target="_blank">Actors</a>
+          </li>
+          <li class="header__list-item"><a href="#">My Fav</a></li>
+        </ul>
+        <button class="header__burger">
+          <span class="burger-span"></span>
+          <span class="burger-span"></span>
+          <span class="burger-span"></span>
+        </button>
+      </nav>
+      <section class="header__search search">
+        <form method="get" class="search__form">
+          <label class="search-label visually-hidden" for="search-input"
+            >Enter movie name...</label
+          ><br />
+          <input
+            class="search-input"
+            type="search"
+            name="search-input"
+            id="search-input"
+            required
+          />
+          <button class="search-submit-btn" type="submit" aria-label="Search">
+            <img
+              src="./src/assets/search-btn-img.svg"
+              alt="Search image"
+              aria-hidden="true"
+            />
+          </button>
+        </form>
+        <button type="button" class="filter-btn">
+          <img src="./src/assets/filter.svg" alt="" />
+        </button>
+        <section class="header__filter-container hidden">
+          <div class="filter-box">
+            <button class="close-filters" type="button">Close</button>
+            <form method="get" class="filter-form">
+              <label for="filter-list">Choose genre</label><br />
+              <select name="filter-list" id="filter-list">
+                <option value="null" selected>all</option>
+              </select>
+              <br />
+              <label for="year-list">Choose year</label>
+              <br />
+              <select name="year-list" id="year-list">
+                <option value="null" selected>all</option>
+              </select>
+              <br />
+              <label for="type-list">Choose type</label>
+              <br />
+              <select name="type-list" id="type-list">
+                <option value="movie" selected>Movies</option>
+                <option value="tv">TV shows</option>
+              </select>
+              <br />
+
+              <button
+                type="submit"
+                onclick="
+                  document
+                    .getElementById('search-result')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+              >
+                Filter
+              </button>
+            </form>
+          </div>
+        </section>
+      </section>
+    </header>
+    <main class="main">
+      <section class="main__movies"></section>
+      <section class="navigation main__page-nav">
+        <a class="main__page-nav--btn previuos-page-btn" href="#main"
+          >previous</a
+        >
+        <p>
+          <span class="current-page">1</span> ...
+          <span class="all-pages">0</span>
+        </p>
+        <a class="main__page-nav--btn next-page-btn" href="#main">next</a>
+      </section>
+      <section id="search-result">
+        <h2>Result of Search</h2>
+        <div class="search-result"></div>
+      </section>
+    </main>
+    <script type="module" src="/src/tv-shows.js"></script>
+    <script type="module" src="/src/filter.js"></script>
+  </body>
+</html>
