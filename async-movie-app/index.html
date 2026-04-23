@@ -9,15 +9,22 @@
   <body>
     <header class="header" id="header">
       <nav class="header__nav">
-        <a class="header__logo" href="#header"
+        <a class="header__logo" href="index.html"
           ><img
             class="header__logo-img"
             src="./src/assets/logo.svg"
             alt="Movie app logo"
         /></a>
         <ul class="header__list">
-          <li class="header__list-item"><a href="#">Movies</a></li>
-          <li class="header__list-item"><a href="#">TV Shows</a></li>
+          <li class="header__list-item">
+            <a href="movies.html" target="_blank">Movies</a>
+          </li>
+          <li class="header__list-item">
+            <a href="tv-shows.html" target="_blank">TV Shows</a>
+          </li>
+          <li class="header__list-item">
+            <a href="actors.html" target="_blank">Actors</a>
+          </li>
           <li class="header__list-item"><a href="#">My Fav</a></li>
         </ul>
         <button class="header__burger">
@@ -46,9 +53,84 @@
             />
           </button>
         </form>
+        <button type="button" class="filter-btn">
+          <img src="./src/assets/filter.svg" alt="" />
+        </button>
+        <section class="header__filter-container hidden">
+          <div class="filter-box">
+            <button class="close-filters" type="button">Close</button>
+            <form method="get" class="filter-form">
+              <label for="filter-list">Choose genre</label><br />
+              <select name="filter-list" id="filter-list">
+                <option value="null" selected>all</option>
+              </select>
+              <br />
+              <label for="year-list">Choose year</label>
+              <br />
+              <select name="year-list" id="year-list">
+                <option value="null" selected>all</option>
+              </select>
+              <br />
+              <label for="type-list">Choose type</label>
+              <br />
+              <select name="type-list" id="type-list">
+                <option value="movie" selected>Movies</option>
+                <option value="tv">TV shows</option>
+              </select>
+              <br />
+
+              <button
+                type="submit"
+                onclick="
+                  document
+                    .getElementById('search-result')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+              >
+                Filter
+              </button>
+            </form>
+          </div>
+        </section>
       </section>
     </header>
-    <main class="main"></main>
+    <main class="main">
+      <section class="trends">
+        <div class="trends-info">
+          <h1 class="trends-header"></h1>
+          <p class="trends-rating"><span class="rating-mark"></span>/10</p>
+          <p class="trends-overview"></p>
+        </div>
+        <div class="trends-poster">
+          <img class="trends-poster-img" src="" alt="Movie poster" />
+        </div>
+      </section>
+      <section class="top-rated">
+        <h2>Top Rated</h2>
+        <div class="top-rated-box">
+          <!-- <article class="movie-box">
+            <img src="" alt="" />
+            <h3></h3>
+            <p></p>
+          </article> -->
+        </div>
+      </section>
+      <section class="upcoming">
+        <h2>Upcoming</h2>
+        <div class="upcoming-box">
+          <!-- <article class="movie-box">
+            <img src="" alt="" />
+            <h3></h3>
+            <p></p>
+          </article> -->
+        </div>
+      </section>
+      <section id="search-result">
+        <h2>Result of Search</h2>
+        <div class="search-result"></div>
+      </section>
+    </main>
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/filter.js"></script>
   </body>
 </html>
