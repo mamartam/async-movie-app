@@ -1,0 +1,59 @@
+@use "../utils/index" as breakpoint;
+.main {
+  .trends {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint.mediaQuery("medium") {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: 375px;
+
+      @include breakpoint.mediaQuery("medium") {
+        max-width: 500px;
+      }
+    }
+    &-poster {
+      display: block;
+      width: 100%;
+      max-width: 375px;
+
+      @include breakpoint.mediaQuery("medium") {
+        max-width: 500px;
+      }
+    }
+  }
+  .top-rated {
+    &-box {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      overflow-x: scroll;
+
+      .movie-box {
+        flex-shrink: 0;
+      }
+    }
+  }
+  .upcoming {
+    &-box {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      overflow-x: scroll;
+
+      .movie-box {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
