@@ -1,0 +1,13 @@
+@use "sass:map";
+
+$screen-sizes: (
+  "small": 375px,
+  "medium": 768px,
+  "large": 1440px,
+);
+
+@mixin mediaQuery($size) {
+  @media screen and (min-width: map.get($screen-sizes, $size)) {
+    @content;
+  }
+}
